@@ -21,12 +21,12 @@ class CounterView extends HookConsumerWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          myTextField(ref),
-          counterText(count: counterResult.count),
+          const MyTextField(),
+          CouterText(count: counterResult.count),
           _nextPageButton(context),
         ],
       ),
-      floatingActionButton: counterViewFabSection(
+      floatingActionButton: CounterViewFabSection(
         onIncreaseClick: counterResult.handleIncrease,
         onDecreaseClick: counterResult.handleDecrease,
       ),
@@ -42,22 +42,22 @@ class CounterView extends HookConsumerWidget {
   }
 
   Widget _nextPageButton(BuildContext context) {
-    navigateNextPage() {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const RandomUserAvatarView(),
-        ),
-      );
-    }
-
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 36),
       child: ElevatedButton(
-        onPressed: navigateNextPage,
+        onPressed: () => _handleNextClick(context),
         child: const Text(
           "Go to Next TestPage",
         ),
+      ),
+    );
+  }
+
+  _handleNextClick(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const RandomUserAvatarView(),
       ),
     );
   }

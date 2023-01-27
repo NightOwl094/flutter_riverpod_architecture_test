@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String _$userModelFetchServiceHash() =>
-    r'124a4064f9de63b2aea9fc4d47f4f3dfb643cbc0';
+    r'b38c9d57056d10c9cc3cd6a1aea66c096f5d7401';
 
 /// See also [userModelFetchService].
 final userModelFetchServiceProvider = AutoDisposeFutureProvider<UserModel?>(
